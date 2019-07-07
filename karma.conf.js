@@ -8,8 +8,8 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-firefox-launcher'),
-      require('karma-spec-reporter'),
       require('karma-jasmine-html-reporter'),
+      require('karma-spec-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
@@ -17,7 +17,7 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/stock-market'),
+      dir: require('path').join(__dirname, '../coverage/project2'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
@@ -30,7 +30,7 @@ module.exports = function (config) {
     customLaunchers: {
       'FirefoxHeadless': {
         base: 'Firefox',
-        flags: ['-headless',],
+        flags: [ '-headless' ],
       }
     },
     singleRun: true,
