@@ -6,14 +6,17 @@ WORKDIR /usr/src/app
 
 COPY package*.json /usr/src/app/
 
-RUN npm install -g @angular/cli@8.0.6
+RUN npm install
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+RUN npm install -g @angular/cli@7.3.8
 
 RUN npm install -g http-server
 
 COPY . /usr/src/app
 
-RUN npm run-script build
+RUN ng build
 
-EXPOSE 4200
+WORKDIR /usr/src/app/cs6261project4/dist/cs6261project4
+CMD http-server
 
-CMD ["http-server", "-D", "FOREGROUND"]
+
