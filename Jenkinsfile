@@ -27,6 +27,11 @@ pipeline {
             }
         }
     }
+    post {
+      always {
+        sh 'docker rm testcontainer || true'
+      }
+    }
 }
 
 
