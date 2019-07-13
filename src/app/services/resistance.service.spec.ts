@@ -13,8 +13,8 @@ describe('ResistanceService', () => {
     resistanceService = service;
   }));
   
-  it('should be none when resistanceService is created', () => {
-    expect(resistanceService.toString()).toEqual('none');
+  it('should have 0 as values when resistanceService is created', () => {
+    expect(resistanceService.toString()).toEqual('0 0 0 0 0');
   });
   
 });

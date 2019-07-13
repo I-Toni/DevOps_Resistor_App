@@ -52,7 +52,7 @@ export class ResistanceService {
   }
   
   toString() {
-  var bands = this.firstDigit + " " + this.secondDigit + " " + this.thirdDigit + " " + this.multipier + " " + this.tolerance;
+    var bands = this.firstDigit + " " + this.secondDigit + " " + this.thirdDigit + " " + this.multipier + " " + this.tolerance;
     return bands
   }
   
