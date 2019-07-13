@@ -59,5 +59,8 @@ export class ResistanceService {
     this.tolerance = percent;
   }
   
+  toString(): string {
+    return this.firstDigit + " " + this.secondDigit + " " + this.thirdDigit + " " + this.multipier " " + this.tolerance;
+  }
   
 }
