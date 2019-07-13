@@ -6,22 +6,14 @@ import { Injectable } from '@angular/core';
 
 export class ResistanceService {
 
-  private firstDigit: string;
-  private secondDigit: string;
-  private thirdDigit: string;
-  private multipier: string;
-  private tolerance: string;
+  private firstDigit: string = "0";
+  private secondDigit: string = "0";
+  private thirdDigit: string = "0";
+  private multipier: string = "0";
+  private tolerance: string = "0";
   
   constructor() {
 
-  }
-  
-  ngOnInit() {
-    this.firstDigit: string = null;
-    this.secondDigit: string = null;
-    this.thirdDigit: string = null;
-    this.multipier: string = null;
-    this.tolerance: string = null;
   }
   
   setFirstDigit(digit: string) {
@@ -59,8 +51,9 @@ export class ResistanceService {
     this.tolerance = percent;
   }
   
-  toString(): string {
-    return this.firstDigit + " " + this.secondDigit + " " + this.thirdDigit + " " + this.multipier " " + this.tolerance;
+  toString() {
+  var bands = this.firstDigit + " " + this.secondDigit + " " + this.thirdDigit + " " + this.multipier + " " + this.tolerance;
+    return bands
   }
   
 }
