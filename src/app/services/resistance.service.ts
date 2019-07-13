@@ -19,9 +19,9 @@ export class ResistanceService {
   ngOnInit() {
     this.firstDigit: string = null;
     this.secondDigit: string = null;
-    this.thirdDigit: string;
-    this.multipier: string;
-    this.tolerance: string;
+    this.thirdDigit: string = null;
+    this.multipier: string = null;
+    this.tolerance: string = null;
   }
   
   setFirstDigit(digit: string) {
