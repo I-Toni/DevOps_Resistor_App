@@ -45,4 +45,19 @@ export class ResistanceService {
     this.thirdDigit = digit;
   }
   
+  setMultipier(multiple: string) {
+    if (multiple === null) {
+      throw new Error('Multipier can not be null');
+    }
+    this.multipier = multiple;
+  }
+  
+  setTolerance(percent: string) {
+    if (percent === null) {
+      throw new Error('Multipier can not be null');
+    }
+    this.tolerance = percent;
+  }
+  
+  
 }
