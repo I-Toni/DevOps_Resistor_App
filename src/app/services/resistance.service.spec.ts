@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { ResistanceService } from './resistance.service';
 
-describe('RosterService', () => {
+describe('ResistanceService', () => {
   var resistanceService: ResistanceService;
   
   beforeEach(() => TestBed.configureTestingModule({
@@ -13,8 +13,8 @@ describe('RosterService', () => {
     resistanceService = service;
   }));
   
-  it('should have no contestants when first created', () => {
-    expect(resistanceService.toString()).toEqual('null null null null null');
+  it('should be none when resistanceService is created', () => {
+    expect(resistanceService.toString()).toEqual('none');
   });
   
 });
