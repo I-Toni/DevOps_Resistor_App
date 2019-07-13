@@ -25,10 +25,24 @@ export class ResistanceService {
   }
   
   setFirstDigit(digit: string) {
-    if (player === null) {
+    if (digit === null) {
       throw new Error('first digit can not be null');
     }
     this.firstDigit = digit;
+  }
+  
+  setSecondDigit(digit: string) {
+    if (digit === null) {
+      throw new Error('Second digit can not be null');
+    }
+    this.secondDigit = digit;
+  }
+  
+  setThirdDigit(digit: string) {
+    if (digit === null) {
+      throw new Error('Third digit can not be null');
+    }
+    this.thirdDigit = digit;
   }
   
 }
