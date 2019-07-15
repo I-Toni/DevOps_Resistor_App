@@ -42,12 +42,21 @@ describe('ResistanceService', () => {
     expect(resistanceService.toString()).toEqual('0 0 0 0 0.1%');
   });
   
-  it('should getResistanceAndTolerance method returns 321K +/- 1%', () => {
+  it('should have getResistanceAndTolerance method return 321K +/- 1% when multiplier is 1k', () => {
     resistanceService.setFirstDigit("3");
     resistanceService.setSecondDigit("2");
     resistanceService.setThirdDigit("1");
     resistanceService.setMultipier("x1K");
     resistanceService.setTolerance("1%");
     expect(resistanceService.getResistanceAndTolerance()).toEqual('321K +/- 1%');
+  });
+  
+  it('should have getResistanceAndTolerance method return 321 +/- 1% when multiplier is 1', () => {
+    resistanceService.setFirstDigit("3");
+    resistanceService.setSecondDigit("2");
+    resistanceService.setThirdDigit("1");
+    resistanceService.setMultipier("x1");
+    resistanceService.setTolerance("1%");
+    expect(resistanceService.getResistanceAndTolerance()).toEqual('321 +/- 1%');
   });
 });
