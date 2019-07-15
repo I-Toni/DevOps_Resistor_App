@@ -13,6 +13,7 @@ pipeline {
                 sh 'ng test'
             }
         }
+        /*
         stage('e2e') {
             steps {
                 sh 'docker build -t cs6261project4:testimage .'
@@ -25,7 +26,7 @@ pipeline {
             steps {
                 echo 'Not yet implemented'
             }
-        }
+        } */
     }
     post {
       always {
