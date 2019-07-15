@@ -85,7 +85,11 @@ export class ResistanceService {
       resistance = digits.substring(0, 2) + "." + digits.substring(2, 3) + multipierArray[1];
     } else {
       var digitsAndMultiplier = parseFloat(digits) * multipierNumber;
-      resistance = digitsAndMultiplier.toString() + multipierArray[1];
+      if (multipierArray[1] == undefined) {
+        resistance = digitsAndMultiplier.toString();
+      } else {
+        resistance = digitsAndMultiplier.toString() + multipierArray[1];
+      }
     }
     
     return resistance + " +/- " + this.tolerance;

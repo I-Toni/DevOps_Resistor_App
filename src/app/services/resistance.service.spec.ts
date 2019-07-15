@@ -96,12 +96,21 @@ describe('ResistanceService', () => {
     expect(resistanceService.getResistanceAndTolerance()).toEqual('3.21G +/- 1%');
   });
   
-  it('should have getResistanceAndTolerance method return 3.21G +/- 1% when multiplier is 100M', () => {
+  it('should have getResistanceAndTolerance method return 32.1G +/- 1% when multiplier is 100M', () => {
     resistanceService.setFirstDigit("3");
     resistanceService.setSecondDigit("2");
     resistanceService.setThirdDigit("1");
     resistanceService.setMultipier("x100M");
     resistanceService.setTolerance("1%");
     expect(resistanceService.getResistanceAndTolerance()).toEqual('32.1G +/- 1%');
+  });
+  
+  it('should have getResistanceAndTolerance method return 32.1 +/- 1% when multiplier is .1', () => {
+    resistanceService.setFirstDigit("3");
+    resistanceService.setSecondDigit("2");
+    resistanceService.setThirdDigit("1");
+    resistanceService.setMultipier("x.1");
+    resistanceService.setTolerance("1%");
+    expect(resistanceService.getResistanceAndTolerance()).toEqual('32.1 +/- 1%');
   });
 });
