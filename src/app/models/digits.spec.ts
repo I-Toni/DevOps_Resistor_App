@@ -5,4 +5,8 @@ describe('Digits model that stores array of digits', () => {
     let digits = new Digits();
     expect(digits).toBeTruthy();
   });
+  it('should have no values in digits array', () => {
+    let digits = new Digits();
+    expect(digits.getDigits()).toEqual([]);
+  });
 });
