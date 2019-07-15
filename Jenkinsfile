@@ -21,6 +21,7 @@ pipeline {
                 sh './node_modules/protractor/bin/webdriver-manager update'
                 sh 'ng e2e --devServerTarget='
                 */
+                echo 'Not yet implemented'
             }
         }
         stage('Deploy') {
