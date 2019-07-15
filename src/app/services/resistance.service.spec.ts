@@ -59,4 +59,13 @@ describe('ResistanceService', () => {
     resistanceService.setTolerance("1%");
     expect(resistanceService.getResistanceAndTolerance()).toEqual('321 +/- 1%');
   });
+  
+  it('should have getResistanceAndTolerance method return 3.21K +/- 1% when multiplier is 10', () => {
+    resistanceService.setFirstDigit("3");
+    resistanceService.setSecondDigit("2");
+    resistanceService.setThirdDigit("1");
+    resistanceService.setMultipier("x10");
+    resistanceService.setTolerance("1%");
+    expect(resistanceService.getResistanceAndTolerance()).toEqual('3.21K +/- 1%');
+  });
 });

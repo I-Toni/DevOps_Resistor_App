@@ -68,9 +68,9 @@ export class ResistanceService {
       if (multipierArray[1] == "K") {
         multipierArray[1] = "M";
       } else if (multipierArray[1] == "M") {
-        multipierArray[1] == "G";
+        multipierArray[1] = "G";
       } else {
-        multipierArray[1] == "K";
+        multipierArray[1] = "K";
       }
       resistance = digits.substring(0, 1) + "." + digits.substring(1, 3) + multipierArray[1];
       
@@ -78,9 +78,9 @@ export class ResistanceService {
       if (multipierArray[1] == "K") {
         multipierArray[1] = "M";
       } else if (multipierArray[1] == "M") {
-        multipierArray[1] == "G";
+        multipierArray[1] = "G";
       } else {
-        multipierArray[1] == "K";
+        multipierArray[1] = "K";
       }
       resistance = digits.substring(0, 2) + "." + digits.substring(2, 3) + multipierArray[1];
     } else {
