@@ -31,4 +31,9 @@ describe('ResistanceService', () => {
     resistanceService.setThirdDigit("3");
     expect(resistanceService.toString()).toEqual('0 0 3 0 0');
   });
+  
+  it('should have x100K as multiplier when set multiplier to x100K', () => {
+    resistanceService.setMultipier("x100K");
+    expect(resistanceService.toString()).toEqual('0 0 0 x100K 0');
+  });
 });
