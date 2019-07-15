@@ -17,4 +17,8 @@ describe('ResistanceService', () => {
     expect(resistanceService.toString()).toEqual('0 0 0 0 0');
   });
   
+  it('should have 2 as first digit when set first digit to 2', () => {
+    resistanceService.setFirstDigit("2");
+    expect(resistanceService.toString()).toEqual('2 0 0 0 0');
+  });
 });
