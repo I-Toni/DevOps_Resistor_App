@@ -9,8 +9,8 @@ export class Digits {
   }
   
   createDigits() {
-    for (int index = 0; index < 10; index++) {
-      this.digits[index] = index;
+    for (var index = 0; index < 10; index++) {
+      this.digits[index] = index.toString();
     }
   }
   
