@@ -58,18 +58,37 @@ export class ResistanceService {
   
   getResistanceAndTolerance(){
     var digits = this.firstDigit + this.secondDigit + this.thirdDigit;
-    var multipierNumber = parseInt(this.multipier, 10);
-    
-    var resistance = parseInt(digits, 10) * multipierNumber;
-    var multipierArray = this.multipier.split(multipierNumber)
-    var resistanceAsString = resistance.toString() + multipierArray[1];
+    var multipierSelected = this.multipier.split('x');
+    var multipierAndSymbol = multipierSelected[1];
+    var multipierNumber = parseFloat(multipierAndSymbol);
+    var resistance = "";
+    var multipierArray = multipierAndSymbol.split(multipierNumber.toString())
     
     if (multipierNumber == 10) {
-      this.resistanceAsString.substring(0, 1) + "." + this.resistanceAsString.substring(1, 3);
+      if (multipierArray[1] == "K") {
+        multipierArray[1] = "M";
+      } else if (multipierArray[1] == "M") {
+        multipierArray[1] == "G";
+      } else {
+        multipierArray[1] == "K";
+      }
+      resistance = digits.substring(0, 1) + "." + digits.substring(1, 3) + multipierArray[1];
+      
     } else if (multipierNumber == 100) {
-      this.resistanceAsString.substring(0, 2) + "." + this.resistanceAsString.substring(2, 3);
+      if (multipierArray[1] == "K") {
+        multipierArray[1] = "M";
+      } else if (multipierArray[1] == "M") {
+        multipierArray[1] == "G";
+      } else {
+        multipierArray[1] == "K";
+      }
+      resistance = digits.substring(0, 2) + "." + digits.substring(2, 3) + multipierArray[1];
+    } else {
+      var digitsAndMultiplier = parseFloat(digits) * multipierNumber;
+      resistance = digitsAndMultiplier.toString();
     }
-    return resistanceAsString + " +/- " + this.tolerance;
+    
+    return resistance + " +/- " + this.tolerance;
   }
   
 }
