@@ -21,4 +21,14 @@ describe('ResistanceService', () => {
     resistanceService.setFirstDigit("2");
     expect(resistanceService.toString()).toEqual('2 0 0 0 0');
   });
+  
+  it('should have 3 as second digit when set second digit to 3', () => {
+    resistanceService.setSecondDigit("3");
+    expect(resistanceService.toString()).toEqual('0 3 0 0 0');
+  });
+  
+  it('should have 3 as third digit when set third digit to 3', () => {
+    resistanceService.setThirdDigit("3");
+    expect(resistanceService.toString()).toEqual('0 0 3 0 0');
+  });
 });
