@@ -36,4 +36,18 @@ describe('ResistanceService', () => {
     resistanceService.setMultipier("x100K");
     expect(resistanceService.toString()).toEqual('0 0 0 x100K 0');
   });
+  
+  it('should have .1% as tolerance when set tolerance to .1%', () => {
+    resistanceService.setTolerance("0.1%");
+    expect(resistanceService.toString()).toEqual('0 0 0 0 0.1%');
+  });
+  
+  it('should getResistanceAndTolerance method returns 321K +/- 1%', () => {
+    resistanceService.setFirstDigit("3");
+    resistanceService.setSecondDigit("2");
+    resistanceService.setThirdDigit("1");
+    resistanceService.setMultipier("x1K");
+    resistanceService.setTolerance("1%");
+    expect(resistanceService.getResistanceAndTolerance()).toEqual('321K +/- 1%');
+  });
 });
