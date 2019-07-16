@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ResistanceService } from './services/resistance.service';
+import { Digits } from './models/digits';
+import { Multipliers } from './models/multipliers';
+import { Tolerances } from './models/tolerances';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cs6261project4';
+  title = 'Resistance Calculator!';
+  public digitsList: string[] = [];
+  public multiplierList: string[] = [];
+  public toleranceList: string[] = [];
+  
+  constructor(private resistanceService: ResistanceService) {}
+
 }
