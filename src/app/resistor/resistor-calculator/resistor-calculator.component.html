@@ -1,23 +1,23 @@
-<h1>{{resistanceService.getResistanceAndTolerance()}}</h1>
+<h1></h1>
 <br>
 <p>Select bands</p>
 
 <div>
-  <select name="firstDigit" [(ngModel)]="">
-    <option *ngFor="let digit of digits" [ngValue]="digit"</option>
+  <select name="firstDigit" >
+    <option *ngFor="let digit of digitsList" [ngValue]="digit">{{digit}}</option>
   </select>
-  <select name="secondDigit" [(ngModel)]="">
-    <option *ngFor="let digit of digits" [ngValue]="digit"</option>
+  <select name="secondDigit" >
+    <option *ngFor="let digit of digitsList" [ngValue]="digit">{{digit}}</option>
   </select>
-  <select name="thirdDigit" [(ngModel)]="">
-    <option *ngFor="let digit of digits" [ngValue]="digit"</option>
+  <select name="thirdDigit" >
+    <option *ngFor="let digit of digitsList" [ngValue]="digit">{{digit}}</option>
   </select>
-  <&nbsp>
-  <select name="multiplier" [(ngModel)]="">
-    <option *ngFor="let multiplier of multipliers" [ngValue]="multiplier"</option>
+
+  <select id="multiplier"name="multiplier" >
+    <option *ngFor="let multiplier of multiplierList" [ngValue]="multiplier">{{multiplier}}</option>
   </select>
-  <&nbsp>
-  <select name="tolerance" [(ngModel)]="">
-    <option *ngFor="let tolerance of tolerances" [ngValue]="tolerance"</option>
+
+  <select id="tolerance" name="tolerance" >
+    <option *ngFor="let tolerance of toleranceList" [ngValue]="tolerance">{{tolerance}}</option>
   </select>
 </div>
