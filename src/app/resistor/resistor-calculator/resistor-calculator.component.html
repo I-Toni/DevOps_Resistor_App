@@ -3,21 +3,21 @@
 <p>Select bands</p>
 
 <div>
-  <select name="firstDigit" >
-    <option *ngFor="let digit of digitsList" [ngValue]="digit">{{digit}}</option>
+  <select name="firstDigit" [(ngModel)]="firstDigit">
+    <option *ngFor="let digit of digitsList" [selected] [value]="digit">{{digit}}</option>
   </select>
-  <select name="secondDigit" >
-    <option *ngFor="let digit of digitsList" [ngValue]="digit">{{digit}}</option>
+  <select name="secondDigit" [(ngModel)]="secondDigit">
+    <option *ngFor="let digit of digitsList" [value]="digit">{{digit}}</option>
   </select>
-  <select name="thirdDigit" >
-    <option *ngFor="let digit of digitsList" [ngValue]="digit">{{digit}}</option>
-  </select>
-
-  <select id="multiplier"name="multiplier" >
-    <option *ngFor="let multiplier of multiplierList" [ngValue]="multiplier">{{multiplier}}</option>
+  <select name="thirdDigit" [(ngModel)]="thirdDigit">
+    <option *ngFor="let digit of digitsList" [value]="digit">{{digit}}</option>
   </select>
 
-  <select id="tolerance" name="tolerance" >
-    <option *ngFor="let tolerance of toleranceList" [ngValue]="tolerance">{{tolerance}}</option>
+  <select id="multiplier" name="multiplier" [(ngModel)]="digitsMultiplier">
+    <option *ngFor="let multiplier of multiplierList" [value]="multiplier">{{multiplier}}</option>
+  </select>
+
+  <select id="tolerance" name="tolerance" [(ngModel)]="digitsTolerance">
+    <option *ngFor="let tolerance of toleranceList" [value]="tolerance">{{tolerance}}</option>
   </select>
 </div>
