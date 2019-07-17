@@ -4,7 +4,7 @@ export class Digits {
     
   constructor() { }
   
-  getDigits(): string[] {
+  getColors(): string[] {
     return this.colors;
   }
   
