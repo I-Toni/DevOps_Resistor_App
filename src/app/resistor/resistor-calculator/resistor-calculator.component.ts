@@ -18,6 +18,7 @@ export class ResistorCalculatorComponent implements OnInit {
   public thirdDigit: string;
   public digitsMultiplier: string;
   public digitsTolerance: string;
+  public resistanceValue: string;
   
   constructor(private resistanceService: ResistanceService) {}
 
@@ -35,6 +36,17 @@ export class ResistorCalculatorComponent implements OnInit {
     this.thirdDigit = this.digitsList[0];
     this.digitsMultiplier = this.multiplierList[0];
     this.digitsTolerance = this.toleranceList[0];
+    this.setResistance();
+  }
+  
+  setResistance() {
+    this.resistanceService.setFirstDigit(this.firstDigit);
+    this.resistanceService.setSecondDigit(this.secondDigit);
+    this.resistanceService.setThirdDigit(this.thirdDigit);
+    this.resistanceService.setMultipier(this.digitsMultiplier);
+    this.resistanceService.setTolerance(this.digitsTolerance);
+    
+    this.resistanceValue = this.resistanceService.getResistanceAndTolerance();
   }
  
 
