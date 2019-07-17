@@ -1,1 +1,23 @@
-<p>resistor-calculator works!</p>
+<h1>{{resistanceService.getResistanceAndTolerance()}}</h1>
+<br>
+<p>Select bands</p>
+
+<div>
+  <select name="firstDigit" [(ngModel)]="">
+    <option *ngFor="let digit of digits" [ngValue]="digit"</option>
+  </select>
+  <select name="secondDigit" [(ngModel)]="">
+    <option *ngFor="let digit of digits" [ngValue]="digit"</option>
+  </select>
+  <select name="thirdDigit" [(ngModel)]="">
+    <option *ngFor="let digit of digits" [ngValue]="digit"</option>
+  </select>
+  <&nbsp>
+  <select name="multiplier" [(ngModel)]="">
+    <option *ngFor="let multiplier of multipliers" [ngValue]="multiplier"</option>
+  </select>
+  <&nbsp>
+  <select name="tolerance" [(ngModel)]="">
+    <option *ngFor="let tolerance of tolerances" [ngValue]="tolerance"</option>
+  </select>
+</div>
