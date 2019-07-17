@@ -4,10 +4,12 @@ import { ResistanceService } from './services/resistance.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { ResistorCalculatorComponent } from './resistor/resistor-calculator/resistor-calculator.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResistorCalculatorComponent
   ],
   imports: [
     BrowserModule,

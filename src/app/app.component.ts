@@ -11,10 +11,4 @@ import { Tolerances } from './models/tolerances';
 })
 export class AppComponent {
   title = 'Resistance Calculator!';
-  public digitsList: string[] = [];
-  public multiplierList: string[] = [];
-  public toleranceList: string[] = [];
-  
-  constructor(private resistanceService: ResistanceService) {}
-
 }
