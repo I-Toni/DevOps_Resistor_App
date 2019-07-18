@@ -25,7 +25,20 @@ describe('ResistorCalculatorComponent', () => {
     fixture.autoDetectChanges();
   });
 
-  it('should create', () => {
+  it('should create resistor-calculator component', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should instantiate instance variables to default values', () => {
+    expect(component.resistanceValue).toEqual('0 +/- 1%');
+    expect(component.digitsList).toEqual(['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white']);
+    expect(component.multiplierList).toEqual(['x1', 'x10', 'x100', 'x1K', 'x10K', 'x100k', 'x1M', 'x10M', 'x100M', 'x1G', 'x0.1', 'x0.01']);
+    expect(component.toleranceList).toEqual(['1%', '2%', '0.5%', '0.25%', '0.1%', '0.05%', '5%', '10%', '20%']);
+    expect(component.firstDigit).toEqual('black');
+    expect(component.secondDigit).toEqual('black');
+    expect(component.thirdDigit).toEqual('black');
+    expect(component.digitsMultiplier).toEqual('x1');
+    expect(component.digitsTolerance).toEqual('1%');
+  });
+  
 });
