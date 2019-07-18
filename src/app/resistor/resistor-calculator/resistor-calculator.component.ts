@@ -24,8 +24,7 @@ export class ResistorCalculatorComponent implements OnInit {
 
   ngOnInit() {
     let digits = new Digits();
-    digits.createDigits();
-    this.digitsList = digits.getDigits();
+    this.digitsList = digits.getColors();
     let multiplier = new Multipliers();
     this.multiplierList = multiplier.getMultipliers();
     let tolerance = new Tolerances();
@@ -40,9 +39,24 @@ export class ResistorCalculatorComponent implements OnInit {
   }
   
   setResistance() {
-    this.resistanceService.setFirstDigit(this.firstDigit);
-    this.resistanceService.setSecondDigit(this.secondDigit);
-    this.resistanceService.setThirdDigit(this.thirdDigit);
+    for (var key in this.digitsList) {
+      if (this.digitsList[key] == this.firstDigit) {
+        this.resistanceService.setFirstDigit(key);
+      }
+    }
+    
+    for (var key in this.digitsList) {
+      if (this.digitsList[key] == this.secondDigit) {
+        this.resistanceService.setSecondDigit(key);
+      }
+    }
+    
+    for (var key in this.digitsList) {
+      if (this.digitsList[key] == this.thirdDigit) {
+        this.resistanceService.setThirdDigit(key);
+      }
+    }
+    
     this.resistanceService.setMultipier(this.digitsMultiplier);
     this.resistanceService.setTolerance(this.digitsTolerance);
     
