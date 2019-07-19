@@ -1,15 +1,15 @@
-<h1>Resistance: {{resistanceValue}}</h1>
+<h2>Resistance: {{resistanceValue}}</h2>
 <br>
 <p>Select bands</p>
 
-<form (ngSubmit)="setResistance()">
-  <select name="firstDigit" [(ngModel)]="firstDigit">
+<form id="resistanceForm"(ngSubmit)="setResistance()">
+  <select id="firstDigit" name="firstDigit" [(ngModel)]="firstDigit">
     <option *ngFor="let digit of digitsList" [value]="digit">{{digit}}</option>
   </select>
-  <select name="secondDigit" [(ngModel)]="secondDigit">
+  <select id="secondDigit" name="secondDigit" [(ngModel)]="secondDigit">
     <option *ngFor="let digit of digitsList" [value]="digit">{{digit}}</option>
   </select>
-  <select name="thirdDigit" [(ngModel)]="thirdDigit">
+  <select id="thirdDigit" name="thirdDigit" [(ngModel)]="thirdDigit">
     <option *ngFor="let digit of digitsList" [value]="digit">{{digit}}</option>
   </select>
 
@@ -20,5 +20,5 @@
   <select id="tolerance" name="tolerance" [(ngModel)]="digitsTolerance">
     <option *ngFor="let tolerance of toleranceList" [value]="tolerance">{{tolerance}}</option>
   </select>
-  <button type="submit" >Submit</button>
+  <button id="submit" type="submit" >Submit</button>
 </form>
