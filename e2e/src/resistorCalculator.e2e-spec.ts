@@ -25,8 +25,28 @@ describe('Will check values in form are displayed', () => {
     expect(element(by.css('#firstDigit')).element(by.cssContainingText('option', 'black')).isSelected()).toBe(true);
     expect(element(by.css('#secondDigit')).element(by.cssContainingText('option', 'black')).isSelected()).toBe(true);
     expect(element(by.css('#thirdDigit')).element(by.cssContainingText('option', 'black')).isSelected()).toBe(true);
-    expect(element(by.css('#multiplier')).element(by.cssContainingText('option', 'x1')).isSelected()).toBe(true);
-    expect(element(by.css('#tolerance')).element(by.cssContainingText('option', '1%')).isSelected()).toBe(true);
+    expect(element(by.id('multiplier')).$('option:checked').getText()).toEqual('x1');
+    expect(element(by.id('tolerance')).$('option:checked').getText()).toEqual('1%');
     expect(element(by.id('submit')).getText()).toEqual('Submit');
+  });
+});
+
+describe('Will set new values in select boxes', () => {
+  it('Should select new value for digits', () => {
+    Utils.home();
+    Utils.selectOption(element(by.id('firstDigit')), 2);
+    Utils.selectOption(element(by.id('secondDigit')), 1);
+    Utils.selectOption(element(by.id('thirdDigit')), 1);
+    expect(element(by.id('firstDigit')).$('option:checked').getText()).toEqual('red');
+    expect(element(by.id('secondDigit')).$('option:checked').getText()).toEqual('brown');
+    expect(element(by.id('thirdDigit')).$('option:checked').getText()).toEqual('brown');
+  });
+  
+  it('Should select new value for multiplier and tolerance', () => {
+    Utils.home();
+    Utils.selectOption(element(by.id('multiplier')), 2);
+    Utils.selectOption(element(by.id('tolerance')), 2);
+    expect(element(by.id('multiplier')).$('option:checked').getText()).toEqual('x100');
+    expect(element(by.id('tolerance')).$('option:checked').getText()).toEqual('0.5%');
   });
 });

@@ -7,4 +7,12 @@ export class Utils {
   static home() {
      browser.get('/');
   }
+  
+  static selectOption(element, position) {
+     if (position) {
+      var options = element.all(by.tagName('option')).then(function(options){
+        options[position].click();
+      });
+     }
+  }
 }
