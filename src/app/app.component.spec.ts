@@ -31,6 +31,6 @@ describe('AppComponent', () => {
   it(`should have as title 'Resistance Calculator!'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Resistance Calculator!');
+    expect(app.title).toEqual('Resistance Calculator');
   });
 });
