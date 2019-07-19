@@ -41,4 +41,17 @@ describe('ResistorCalculatorComponent', () => {
     expect(component.digitsTolerance).toEqual('1%');
   });
   
+  it('should create set new values for variables used to calculate resistance', () => {
+    component.firstDigit = 'brown';
+    component.secondDigit = 'brown';
+    component.thirdDigit = 'red';
+    component.digitsMultiplier = 'x10';
+    component.digitsTolerance = '2%';
+    expect(component.firstDigit).toEqual('brown');
+    expect(component.secondDigit).toEqual('brown');
+    expect(component.thirdDigit).toEqual('red');
+    expect(component.digitsMultiplier).toEqual('x10');
+    expect(component.digitsTolerance).toEqual('2%');
+  });
+  
 });
