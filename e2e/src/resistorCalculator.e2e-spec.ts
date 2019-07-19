@@ -50,3 +50,17 @@ describe('Will set new values in select boxes', () => {
     expect(element(by.id('tolerance')).$('option:checked').getText()).toEqual('0.5%');
   });
 });
+
+describe('Will display new resistance value', () => {
+  it('Should display Resistance: 21.1K +/- 0.5%', () => {
+    Utils.home();
+    Utils.selectOption(element(by.id('firstDigit')), 2);
+    Utils.selectOption(element(by.id('secondDigit')), 1);
+    Utils.selectOption(element(by.id('thirdDigit')), 1);
+
+    Utils.selectOption(element(by.id('multiplier')), 2);
+    Utils.selectOption(element(by.id('tolerance')), 2);
+    element(by.id('submit')).click();
+    expect(element(by.tagName('h2')).getText()).toEqual('Resistance: 21.1K +/- 0.5%');
+  });
+});
