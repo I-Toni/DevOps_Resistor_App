@@ -54,7 +54,7 @@ describe('ResistorCalculatorComponent', () => {
     expect(component.digitsTolerance).toEqual('2%');
   });
   
-  it('should set accurate resistance with new values', () => {
+  it('should set accurate resistance with new values resulting in 1.12K +/- 2%', () => {
     component.firstDigit = 'brown';
     component.secondDigit = 'brown';
     component.thirdDigit = 'red';
@@ -62,6 +62,26 @@ describe('ResistorCalculatorComponent', () => {
     component.digitsTolerance = '2%';
     component.setResistance();
     expect(component.resistanceValue).toEqual('1.12K +/- 2%');
+  });
+  
+  it('should set resistance with x10K resulting in 1.12M +/- 2%', () => {
+    component.firstDigit = 'brown';
+    component.secondDigit = 'brown';
+    component.thirdDigit = 'red';
+    component.digitsMultiplier = 'x10K';
+    component.digitsTolerance = '2%';
+    component.setResistance();
+    expect(component.resistanceValue).toEqual('1.12M +/- 2%');
+  });
+  
+  it('should set resistance with x100K resulting in 11.2M +/- 2%,', () => {
+    component.firstDigit = 'brown';
+    component.secondDigit = 'brown';
+    component.thirdDigit = 'red';
+    component.digitsMultiplier = 'x100K';
+    component.digitsTolerance = '2%';
+    component.setResistance();
+    expect(component.resistanceValue).toEqual('11.2M +/- 2%');
   });
   
 });
