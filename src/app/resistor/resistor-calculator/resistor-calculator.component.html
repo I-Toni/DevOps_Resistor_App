@@ -1,7 +1,11 @@
 <h2>Resistance: {{resistanceValue}}</h2>
 <br>
 <p>Select bands</p>
-
+<div>
+  <span id="digitsPadding">Digits</span>
+  <span id="multiplierPadding">Multiplier</span>
+  <span id="tolerancePadding">Tolerance</span>
+</div>
 <form id="resistanceForm"(ngSubmit)="setResistance()">
   <select id="firstDigit" name="firstDigit" [(ngModel)]="firstDigit">
     <option *ngFor="let digit of digitsList" [value]="digit">{{digit}}</option>
