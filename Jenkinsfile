@@ -22,18 +22,21 @@ pipeline {
                 sh 'ng e2e --devServerTarget='
                 
             }
+            post {
+                always {
+                    sh 'docker rmi cs6261project4:testimage -f || true'
+                    sh 'docker rm testcontainer -f || true'
+                }
+            }
         }
         stage('Deploy') {
             steps {
-                echo 'Not yet implemented'
+                sh 'docker build -t cs6261project4:productimage .'
+                sh 'docker run -d -v ${PWD}:/app -p 4200:5000 --name productcontainer cs6261project4:productimage'
             }
         }
     }
-    post {
-      always {
-        sh 'docker rm testcontainer || true'
-      }
-    }
+    
 }
 
 
