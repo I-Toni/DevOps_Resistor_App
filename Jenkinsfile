@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'docker build -t cs6261project4:productimage .'
-                sh 'docker run -d -v ${PWD}:/app -p 4200:5000 --name productcontainer cs6261project4:productimage'
+                sh 'docker run -d -v ${PWD}:/app -p 5000:4200 --name productcontainer cs6261project4:productimage'
             }
         }
     }
