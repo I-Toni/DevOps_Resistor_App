@@ -1,28 +1,33 @@
 # Author: Ibrahim Tonifarah
 # DevOps Resistor App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+Very Simple single-page-application in Angular that calculates the resistance of a resistor based on its color bands.
+- Calculate 5-band resistors
+- Using an Angular service to perform calculations
+-Fully Unit test the service
+- Use an Angular Component to handle the models
+- Fully end to end test the application
+- Execute builds in jenkins
+- Deploy Application with Jenkins deploy stage: This will build a Docker image with the application code, and working environment (http-server and other needed node packages). Then, starts a container running the deployed application on the virtual machines port 5000
 
-## Development server
+Goals:
+- Continuous Integration and build automation using Jenkins, npm etc.
+- Source-controlled testing and deployment environments (Docker)
+- Distributed version control (Git and remote repositories on Bitbucket)
+- Build and test a web application using a Model View Controller style framework (Angular, Karma, Protractor etc)
+- Use a command line environment (Linux) for application development.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The Three Major Components of this Project:
+1. Configuring Jenkins and establishing pipelines: pulls code from remote repository and runs unit tests in a container
+    -A Jenkinsfile was included with the following stages: Build (to run npm install), test (to run ng test), e2e(build docker image, run the detached container, perform a local webdriver-manager update, and run ng e2e using the --devServerTarget= option) , deploy.
+    - Jenkins was configured with my github repository url and credentials
+    - Jenkins will not allow code into the production codebase until it passes all test, and it will also be set to automatically run a pipeline when it detects new commits in the repository.
 
-## Code scaffolding
+2. Docker Based E2E test environment
+    - Dockerfile was created to build an image for hosting and running the application in Docker containers. This image will have everything required to run the application. This image will also be used to create e2e testing as well as deployment.
+    - The Dockerfile: builds on top of a node-based image, creates a working directory, installs angular-cli, installs http-server, directs containers to build the application and start the webserver on port 4200
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3. Deploy the application
+    - Implemented in the deploy stage of the jenkins pipeline
+    - builds a Docker image with application code and working environment (http-server and other needed node packages_
+    - starts a container running the deployed application on the linux virtual machines port 5000
