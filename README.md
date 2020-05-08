@@ -31,3 +31,6 @@ The Three Major Components of this Project:
     - Implemented in the deploy stage of the jenkins pipeline
     - builds a Docker image with application code and working environment (http-server and other needed node packages_
     - starts a container running the deployed application on the linux virtual machines port 5000
+
+Screen Shot of the Working application
+![Screenshot_2020-05-08 Cs6261project4](https://user-images.githubusercontent.com/52586211/81377388-5e21e400-90d3-11ea-8952-c1bde5ae5456.png)
